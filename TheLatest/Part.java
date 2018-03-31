@@ -14,8 +14,8 @@ public class Part{
     public int getValue(){
         Complex c=new Complex(posX,posY);
         Complex z=new Complex(0,0);
-        int iterations=0
-        while((z.getReal()<=2.0E+307||z.getImaginary()<=2.0E+307)&&loops<255){
+        int iterations=0;
+        while((z.getReal()<=2.0E+307||z.getImaginary()<=2.0E+307)&&iterations<255){
             z=(z.square()).plus(c);
             iterations++;
         }

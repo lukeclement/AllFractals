@@ -61,12 +61,20 @@ public class Mandel extends Application{
             
             public void handle(long currentNanoTime){
                 //Stuff here
-                Part p=new Part(x,y,scale,offX,offY);
-                x++;
-                if(x==width){
-                    y++;
-                    x=0;
+                if(y!=height){
+                    for(int i=0;i<width;i++){
+                        Part p=new Part(i,y,scale,offX,offY);
+                        gc.setFill(Color.rgb(0,0,p.getValue()));
+                        gc.fillOval(p.getX(),p.getY(),1,1);
+                    }
                 }
+                y++;
+                if(y==height){
+                    y=0;
+                }
+                
+                
+                
                 //End stuff
             }
         }.start();
