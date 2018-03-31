@@ -11,7 +11,7 @@ public class Part{
         posY=offY-(double)y*scale;
     }
     
-    public getValue(){
+    public int getValue(){
         Complex c=new Complex(posX,posY);
         Complex z=new Complex(0,0);
         int iterations=0
@@ -21,5 +21,10 @@ public class Part{
         }
         return iterations;
     }
-    
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
 }

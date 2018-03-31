@@ -52,9 +52,21 @@ public class Mandel extends Application{
         final long startNanoTime=System.nanoTime();
         
         new AnimationTimer(){
+            public int x=0;
+            public int y=0;
+            public double offX=1;
+            public double offY=1;
+            public double zoom=500;
+            public double scale=1/zoom;
+            
             public void handle(long currentNanoTime){
                 //Stuff here
-                
+                Part p=new Part(x,y,scale,offX,offY);
+                x++;
+                if(x==width){
+                    y++;
+                    x=0;
+                }
                 //End stuff
             }
         }.start();
